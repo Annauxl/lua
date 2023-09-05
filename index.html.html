@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://media.discordapp.net/attachments/1111618985092456480/1128148732052000838/image.png?width=804&height=473");
+            background-size: cover;
+            cursor: url('https://image.flaticon.com/icons/svg/1432/1432380.svg'), auto;
+            margin: 0;
+            padding: 0;
+        }
+
+        #login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        #login-form {
+            text-align: center;
+        }
+
+        #login-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <label for="username">Nome de login:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login" id="login-button">
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "reborn" && password === "25042023") {
+                window.location.href = "pagina_destino.html";
+            } else {
+                alert("Credenciais de login incorretas. Tente novamente.");
+            }
+        });
+    </script>
+</body>
+</html>
